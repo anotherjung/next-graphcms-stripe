@@ -88,6 +88,7 @@ function Cart() {
 
   if (isEmpty) return <p>Your cart is empty</p>
 
+  console.log(21,items)
   return (
     <React.Fragment>
       <SEO title="Cart" />

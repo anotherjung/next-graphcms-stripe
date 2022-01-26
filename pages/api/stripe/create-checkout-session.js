@@ -42,13 +42,24 @@ export default async (req, res) => {
       }
     }
 
+    console.log(11,items)
     const line_items = await Promise.all(
       items.map(async (item) => ({
         adjustable_quantity: {
           enabled: true,
           minimum: 1
         },
-        price_data: await getProduct(item.productId),
+        //price_data: await getProduct(item.productId),
+        price_data: {
+          currency : "USD",
+          product_data: {
+            name: item.en.name,
+            //description: JSON.parse(JSON.stringify(item.mem.name + item.variant.name)),
+            images: [item.image.url],
+            metadata: {"variantId": item.id,"productId": item.productId},
+          },
+          unit_amount: item.price,
+        },
         quantity: item.quantity
       }))
     )
