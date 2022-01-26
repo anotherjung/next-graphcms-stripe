@@ -8,7 +8,7 @@ export const config = {
 }
 
 const handler = async (req, res, event) => {
-  console.log(31,"webhook")
+  console.log(31,"webhook id",event.id)
   const permittedEvents = ['checkout.session.completed']
 
   if (req.method === 'POST') {
