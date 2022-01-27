@@ -18,7 +18,7 @@ function SuccessPage() {
 
     if (router.query.id) fetchOrder()
   }, [router.query.id])
-  console.log(43,order)
+  console.log(433,order)
   if (loading) return 'loading'
 
   return order ? <pre>{JSON.stringify(order, null, 2)}</pre> : 'none'
