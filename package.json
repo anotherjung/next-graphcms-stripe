@@ -21,7 +21,8 @@
     "react-hook-form": "^6.15.4",
     "react-use-cart": "^1.11.1",
     "stripe": "^8.137.0",
-    "swr": "^0.4.2"
+    "swr": "^0.4.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.0",
