@@ -1,4 +1,5 @@
 import createOrder from '@/lib/create-order'
+import createOrderEmail from '@/lib/create-order-email'
 import stripeSigningSecret from '@/lib/stripe-signing-secret'
 
 export const config = {
@@ -9,14 +10,16 @@ export const config = {
 
 const handler = async (req, res, event) => {
   console.log(31,"webhook id",event.id)
+
   const permittedEvents = ['checkout.session.completed']
 
   if (req.method === 'POST') {
     if (permittedEvents.includes(event.type)) {
       try {
-        switch (event.type) {
+        switch (event.type) {            
           case 'checkout.session.completed':
-            await createOrder({ sessionId: event.data.object.id })
+              await createOrder({ sessionId: event.data.object.id })  
+              await createOrderEmail({ sessionId: event.data.object.id })
             break
           default:
             throw new Error(`Unhandled event: ${event.type}`)
