@@ -5,5 +5,7 @@ module.exports = {
   },
   images: {
     domains: ['media.graphcms.com']
-  }
+  },
+  experimental: { scriptLoader: true },
 }
+

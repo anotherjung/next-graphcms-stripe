@@ -18,3 +18,4 @@ yarn-error.log*
 .env*
 yarn.lock
 .vscode/snipsnap.code-snippets
+package-lock.json
