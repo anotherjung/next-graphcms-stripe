@@ -15,6 +15,6 @@ yarn-error.log*
 # Misc
 .vercel
 .env
-.env copy
+.env*
 yarn.lock
 .vscode/snipsnap.code-snippets
